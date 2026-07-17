@@ -1,46 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Fanny</title>
 
-    <style>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    body{
-        margin:0;
-        background:#050b18;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        height:100vh;
-        color:white;
-        font-family:Arial;
-    }
+    <title>Jarvina Experience</title>
 
-    h1{
-        color:#5fd8ff;
-        font-size:60px;
-    }
-
-    p{
-        color:#c9d8e6;
-        font-size:22px;
-    }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
 
 </head>
 
 <body>
 
-<div align="center">
+    <!-- BACKGROUND -->
 
-<h1>🤖 JARVINA</h1>
+    <div id="background"></div>
 
-<p>Proyecto Fanny iniciado...</p>
+    <!-- PARTICLES -->
 
-</div>
+    <canvas id="particles"></canvas>
+
+    <!-- ==========================
+            BOOT
+    =========================== -->
+
+    <section id="boot-screen">
+
+        <div class="boot-center">
+
+            <div class="logo">
+                STARK INDUSTRIES
+            </div>
+
+            <h1 class="jarvina">
+                JARVINA
+            </h1>
+
+            <div class="subtitle">
+                Emotional Support Protocol
+            </div>
+
+            <!-- SCANNER -->
+
+            <div id="scanner">
+
+                <div class="scanner-title">
+                    Escaneando destinataria...
+                </div>
+
+                <div class="progress">
+
+                    <div id="progressBar"></div>
+
+                </div>
+
+                <div id="progressText">
+
+                    0%
+
+                </div>
+
+            </div>
+
+            <!-- ACCESS -->
+
+            <div id="authorized">
+
+                ACCESS GRANTED
+
+            </div>
+
+            <div id="authorizedName">
+
+                FANNY ❤️
+
+            </div>
+
+            <!-- CONSOLE -->
+
+            <div id="console">
+
+                <div id="consoleContent"></div>
+
+            </div>
+
+            <div id="status">
+
+                Inicializando sistema...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+            MAIN SCENE
+    =========================== -->
+
+    <section id="scene">
+
+        <img
+            id="sceneImage"
+            src=""
+            alt="">
+
+        <h2 id="sceneTitle"></h2>
+
+        <div id="sceneText"></div>
+
+        <button id="sceneBtn">
+
+            Continuar
+
+        </button>
+
+    </section>
+
+    <!-- AUDIO -->
+
+    <audio
+        id="startupSound"
+        src="assets/sounds/startup.mp3"
+        preload="auto">
+    </audio>
+
+    <audio
+        id="transitionSound"
+        src="assets/sounds/transition.mp3"
+        preload="auto">
+    </audio>
+
+    <audio
+        id="clickSound"
+        src="assets/sounds/click.mp3"
+        preload="auto">
+    </audio>
+
+    <script src="js/app.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,566 @@
+/* ==========================================================
+   PROJECT FANNY
+   STYLE 4.0
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#050d17;
+    --bg2:#081a2d;
+
+    --primary:#5edcff;
+    --secondary:#8ee8ff;
+
+    --text:#ffffff;
+    --muted:#9cb6c9;
+
+    --glass:rgba(255,255,255,.04);
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:var(--bg);
+
+    color:white;
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at top,
+    rgba(94,220,255,.15),
+    transparent 35%),
+
+    radial-gradient(circle at bottom,
+    rgba(0,140,255,.08),
+    transparent 50%),
+
+    linear-gradient(
+        180deg,
+        var(--bg2),
+        var(--bg)
+    );
+
+}
+
+#background::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:900px;
+    height:900px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(94,220,255,.12),
+    transparent 70%);
+
+    filter:blur(25px);
+
+    animation:breath 8s infinite;
+
+}
+
+/* ==========================================================
+   PARTICLES
+========================================================== */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+/* ==========================================================
+   BOOT
+========================================================== */
+
+#boot-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:3;
+
+    transition:1s;
+
+}
+
+.boot-center{
+
+    width:min(900px,92vw);
+
+}
+
+.logo{
+
+    color:#bfd7e7;
+
+    letter-spacing:12px;
+
+    font-size:15px;
+
+    margin-bottom:30px;
+
+    opacity:.85;
+
+}
+
+.jarvina{
+
+    font-size:88px;
+
+    letter-spacing:8px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 15px rgba(94,220,255,.9),
+
+    0 0 40px rgba(94,220,255,.35),
+
+    0 0 90px rgba(94,220,255,.15);
+
+    animation:glow 5s infinite;
+
+}
+
+.subtitle{
+
+    margin-top:20px;
+
+    color:#c8dbe8;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    font-size:17px;
+
+}
+
+/* ==========================================================
+   SCANNER
+========================================================== */
+
+#scanner{
+
+    margin-top:60px;
+
+    opacity:0;
+
+}
+
+.scanner-title{
+
+    color:var(--primary);
+
+    letter-spacing:4px;
+
+    margin-bottom:18px;
+
+}
+
+.progress{
+
+    width:420px;
+
+    max-width:90vw;
+
+    height:8px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+}
+
+#progressBar{
+
+    width:0;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #4dd9ff,
+        #b3ffff
+    );
+
+    box-shadow:
+
+    0 0 15px #5edcff;
+
+}
+
+#progressText{
+
+    margin-top:15px;
+
+    color:white;
+
+    letter-spacing:3px;
+
+}
+/* ==========================================================
+   ACCESS
+========================================================== */
+
+#authorized{
+
+    margin-top:45px;
+
+    color:#52f7a8;
+
+    font-size:22px;
+
+    letter-spacing:5px;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+#authorizedName{
+
+    margin-top:18px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 18px rgba(255,90,120,.45);
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+/* ==========================================================
+   CONSOLE
+========================================================== */
+
+#console{
+
+    width:520px;
+
+    max-width:92vw;
+
+    min-height:200px;
+
+    margin:45px auto 0;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:var(--glass);
+
+    border:1px solid rgba(94,220,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    text-align:left;
+
+    font-family:
+
+    Consolas,
+
+    monospace;
+
+    color:#8fe8ff;
+
+    line-height:30px;
+
+}
+
+.console-line{
+
+    opacity:0;
+
+    transform:translateX(-15px);
+
+    transition:.4s;
+
+}
+
+.console-line.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+#status{
+
+    margin-top:25px;
+
+    color:var(--muted);
+
+    letter-spacing:3px;
+
+}
+
+/* ==========================================================
+   SCENES
+========================================================== */
+
+#scene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:rgba(4,10,20,.93);
+
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:1s;
+
+    z-index:5;
+
+}
+
+#scene.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#sceneImage{
+
+    display:none;
+
+    width:min(88vw,560px);
+
+    border-radius:22px;
+
+    object-fit:cover;
+
+    margin-bottom:40px;
+
+    box-shadow:
+
+    0 0 45px rgba(94,220,255,.28);
+
+    animation:
+
+    floating 8s ease-in-out infinite,
+
+    zoomPhoto 20s linear infinite alternate;
+
+}
+
+#sceneTitle{
+
+    color:var(--primary);
+
+    font-size:52px;
+
+    margin-bottom:30px;
+
+}
+
+#sceneText{
+
+    width:min(900px,88vw);
+
+    min-height:110px;
+
+    font-size:30px;
+
+    line-height:1.7;
+
+}
+
+#sceneBtn{
+
+    display:none;
+
+    margin-top:45px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:var(--primary);
+
+    color:#041019;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    animation:pulseButton 2s infinite;
+
+}
+
+#sceneBtn:hover{
+
+    transform:scale(1.06);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    .jarvina{
+
+        font-size:54px;
+
+        letter-spacing:5px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+        letter-spacing:3px;
+
+    }
+
+    #console{
+
+        width:92vw;
+
+        font-size:13px;
+
+        line-height:24px;
+
+    }
+
+    #sceneTitle{
+
+        font-size:34px;
+
+    }
+
+    #sceneText{
+
+        width:92vw;
+
+        font-size:22px;
+
+    }
+
+    #sceneBtn{
+
+        font-size:18px;
+
+    }
+
+    #authorizedName{
+
+        font-size:30px;
+
+    }
+
+    .progress{
+
+        width:90vw;
+
+    }
+
+}
