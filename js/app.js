@@ -352,7 +352,7 @@ async function showEnding(){
 
         sceneText,
 
-        "Gracias por recorrer este pequeño universo.\n\nFue creado con cariño.\nCon admiración.\nY con un pedacito de mi corazón.\n\nTe quiero mucho, Fanny. Te Quiero 3 Millones",
+        "Gracias por recorrer este pequeño universo.\n\nFue creado con cariño.\nCon admiración.\nY con un pedacito de mi corazón.\n\nTe quiero mucho, Fanny. Te Amo 3 Millones",
 
         35
 
