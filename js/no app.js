@@ -398,7 +398,7 @@ function createParticles(){
 
         });
 
-            }
+    }
 
 }
 
